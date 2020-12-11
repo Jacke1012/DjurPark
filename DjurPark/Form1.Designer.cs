@@ -35,6 +35,11 @@ namespace DjurPark
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.lbxAllAnimals = new System.Windows.Forms.ListBox();
             this.tbxItemView = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cmbDjur
@@ -57,14 +62,14 @@ namespace DjurPark
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(83, 164);
+            this.tbxName.Location = new System.Drawing.Point(69, 112);
             this.tbxName.Name = "tbxName";
             this.tbxName.Size = new System.Drawing.Size(131, 20);
             this.tbxName.TabIndex = 2;
             // 
             // datePicker
             // 
-            this.datePicker.Location = new System.Drawing.Point(83, 224);
+            this.datePicker.Location = new System.Drawing.Point(69, 172);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(175, 20);
             this.datePicker.TabIndex = 3;
@@ -84,14 +89,67 @@ namespace DjurPark
             this.tbxItemView.Location = new System.Drawing.Point(193, 401);
             this.tbxItemView.Multiline = true;
             this.tbxItemView.Name = "tbxItemView";
+            this.tbxItemView.ReadOnly = true;
             this.tbxItemView.Size = new System.Drawing.Size(598, 111);
             this.tbxItemView.TabIndex = 6;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(12, 115);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 178);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "BirthDate";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(18, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Species";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 221);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Gender";
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbGender.Location = new System.Drawing.Point(69, 218);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(176, 21);
+            this.cmbGender.TabIndex = 12;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 532);
+            this.Controls.Add(this.cmbGender);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.tbxItemView);
             this.Controls.Add(this.lbxAllAnimals);
             this.Controls.Add(this.datePicker);
@@ -114,6 +172,11 @@ namespace DjurPark
         private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.ListBox lbxAllAnimals;
         private System.Windows.Forms.TextBox tbxItemView;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbGender;
     }
 }
 

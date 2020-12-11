@@ -30,9 +30,11 @@ namespace DjurPark
 
         private void NewAnimal_Click(object sender, EventArgs e)
         {
-            if (cmbDjur.SelectedIndex!=-1 && tbxName.Text !="")
+            if (cmbDjur.SelectedIndex!=-1 && tbxName.Text !="" && cmbGender.SelectedIndex != -1)
             {
-                allAnimals.Add((Djur)Activator.CreateInstance(animalsTypes[cmbDjur.SelectedIndex].GetType(), new object[] { tbxName.Text, datePicker.Value }));
+                Djur temp = (Djur)Activator.CreateInstance(animalsTypes[cmbDjur.SelectedIndex].GetType(), new object[] { tbxName.Text, datePicker.Value });
+                temp.gender = (Gender)cmbGender.SelectedIndex;
+                allAnimals.Add(temp);
                 RefrehsLbx();
             }
         }
@@ -48,12 +50,15 @@ namespace DjurPark
 
         private void lbxAllAnimals_DoubleClick(object sender, EventArgs e)
         {
-            SizeChanging sizeChanging = new SizeChanging(allAnimals[lbxAllAnimals.SelectedIndex]);
-            sizeChanging.ShowDialog();
-            int tempSelectedIndex = lbxAllAnimals.SelectedIndex;
-            RefrehsLbx();
-            lbxAllAnimals.SelectedIndex = tempSelectedIndex;
-            tbxItemView.Text = ((Djur)lbxAllAnimals.SelectedItem).PrintInfo();
+            if (lbxAllAnimals.SelectedIndex != -1)
+            {
+                SizeChanging sizeChanging = new SizeChanging(allAnimals[lbxAllAnimals.SelectedIndex]);
+                sizeChanging.ShowDialog();
+                int tempSelectedIndex = lbxAllAnimals.SelectedIndex;
+                RefrehsLbx();
+                lbxAllAnimals.SelectedIndex = tempSelectedIndex;
+                tbxItemView.Text = ((Djur)lbxAllAnimals.SelectedItem).PrintInfo();
+            }
         }
     }
 }
